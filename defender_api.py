@@ -10,7 +10,6 @@ def get_access_token(tenant_id, client_id, client_secret):
         "client_secret": client_secret,
         "grant_type": "client_credentials",
     }
-    
     headers = {
         "Content-Type": "application/x-www-form-urlencoded"
     }
@@ -43,7 +42,6 @@ def fetch_defender_data(tenant_id, client_id, client_secret, endpoint):
     if access_token is None:
         print("Failed to obtain access token.")
         return None
-    
     data = get_defender_data(access_token, endpoint)
 
     if data is None:
@@ -51,4 +49,3 @@ def fetch_defender_data(tenant_id, client_id, client_secret, endpoint):
         return None
     else:
         return data
-
